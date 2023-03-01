@@ -45,7 +45,7 @@ COPY --from=builder /usr/bin/msmtp* /usr/bin/
 
 EXPOSE 2500
 
-RUN chmod +x /usr/bin/container_init.sh
+RUN chmod +x /usr/bin/container_init.sh;touch /etc/msmtprc;chmod 775 /etc/msmtprc
 
 CMD /usr/bin/container_init.sh
 

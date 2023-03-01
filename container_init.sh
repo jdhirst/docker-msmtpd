@@ -33,10 +33,6 @@ if [ -z "$SMTP_HOST" ]; then
   exit 1
 fi
 
-echo "Setting timezone to ${TZ}..."
-ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime
-echo ${TZ} > /etc/timezone
-
 echo "Creating configuration..."
 cat > /etc/msmtprc <<EOL
 account default
